@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <title>Document</title>
+   <style>
+       body {
+         background-image: linear-gradient(to right, rgb(183, 144, 255) , rgb(243, 183, 126)); 
+       }
+      #modal-overlay {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.7);
+         display: none;
+         background-image: linear-gradient(to right, rgb(183, 144, 255) , rgb(243, 183, 126)); 
+         }
+
+         #modal-window {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 32%;
+         transform: translate(-50%, -50%);
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+         }
+
+         #modal-window h2 {
+         margin-top: 0;
+         text-align: center;
+         }
+
+         #modal-close-btn {
+         padding: 10px;
+         width: 20%;
+         margin-left: 200px;
+         background-color: rgb(255, 119, 192);
+         font-weight: 700;
+         border: 2px solid rgb(255, 119, 192);
+         border-radius: 10%;
+         cursor: pointer;
+         }
+
+         #modal-btn {
+            width: 20%;
+            padding: 30px;
+            background-color: rgb(255, 119, 192);
+            color: white;
+            font-weight: 700;
+            font-size: 40px;
+            border-radius: 10px;
+            position: absolute;
+            top: 40%;
+            left: 38%;
+            cursor: pointer;
+         }
+
+         @keyframes modal-fade-in {
+         from {
+            opacity: 0;
+         }
+         to {
+            opacity: 0;
+         }
+         }
+
+         .modal-fade {
+         animation: modal-fade-in 0.3s ease-in-out;
+         }
+
+         img {
+            width: 500px;
+         }
+
+   </style>
+</head>
+<body>
+   
+   <button id="modal-btn">Click me!</button>
+
+   <div id="modal-overlay">
+   <div id="modal-window">
+      <h2>Ще трішки і ...</h2>
+      <p><img src="./front-view-8-march-lettering-with-copy-space.jpg" alt="8-march"></p>
+      <button id="modal-close-btn">Закрыть</button>
+   </div>
+   </div>
+
+   <script type="text/javascript">
+
+      $(function() {
+         let modal = $('#modal-overlay');
+         let btn = $('#modal-btn');
+         let closeBtn = $('#modal-close-btn');
+
+         // Открытие модального окна
+         btn.click(function() {
+            modal.fadeIn().addClass('modal-fade');
+         });
+
+         // Закрытие модального окна
+         closeBtn.click(function() {
+            modal.fadeOut().removeClass('modal-fade');
+         });
+      });
+
+   </script>
+</body>
+</html>
